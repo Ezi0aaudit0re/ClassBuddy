@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tags_card_view"
+    android:padding="20sp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/tags_card_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chip"
+        app:chipCornerRadius="10sp"
+        app:chipIcon="@android:drawable/presence_online" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.amannagpal.classbuddyv2"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Temporary fix until alpha10
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    // floatinng  text buutton
+    implementation 'com.github.dimorinny:floating-text-button:0.0.4'
+
+    // Google Cloud speech to text api
+    implementation 'com.google.api-client:google-api-client-android:1.22.0'
+    implementation 'com.google.apis:google-api-services-speech:v1beta1-rev336-1.22.0'
+    implementation 'com.google.apis:google-api-services-language:v1beta2-rev6-1.22.0'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'commons-io:commons-io:2.5'
+
+
+    // converter .3gp to .wav dependency
+    implementation 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
+
+    // record in wav format
+    implementation 'com.github.adrielcafe:AndroidAudioRecorder:0.3.0'
+
+    // om recorder
+    implementation 'com.kailashdabhi:om-recorder:1.1.5'
+
+
+    // animation
+    implementation 'com.haozhang.libary:android-animated-recording-view:1.0'
+
+
+
+    def room_version = "2.1.0-alpha02"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+
+}
